@@ -4,8 +4,12 @@ import apiRouter from './api';
 import express from 'express';
 const server = express();
 
+server.set('view engine', 'ejs');
+
 server.get('/', (req, res) => {
-  res.send('Hello Express\n');
+  res.render('index', {
+    content: 'Hello Express and <em>EJS!</em>'
+  });
 });
 
 // no need for fs module. Automatically looks in ./public dir
