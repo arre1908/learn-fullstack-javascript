@@ -6,3 +6,4 @@ This repo follows the Lynda course *Learning Full-Stack JavaScript Development: 
 - EJS
 - React
 - JSX
+- React Developer Tools (browser extension)

@@ -7,3 +7,10 @@ ReactDom.render(
   <App />,
   document.getElementById('root')
 );
+
+setTimeout(() => {
+  ReactDom.render(
+    <h2>...</h2>,
+    document.getElementById('root')
+  );
+}, 4000);
