@@ -4,3 +4,5 @@ This repo follows the Lynda course *Learning Full-Stack JavaScript Development: 
 - Node.js
 - Express
 - EJS
+- React
+- JSX
