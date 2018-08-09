@@ -13,16 +13,21 @@ server.use(sassMiddleware({
 
 server.set('view engine', 'ejs');
 
+import serverRender from './serverRender';
 server.get('/', (req, res) => {
-  res.render('index', {
-    content: '...'
-  });
+  serverRender()
+    .then(content => {
+      res.render('index', {
+        content
+      });
+    })
+    .catch(console.error);
 });
 
 // no need for fs module. Automatically looks in ./public dir
 server.use(express.static('public'));
 server.use('/api', apiRouter);
 
-server.listen(config.port, () => {
-  console.info('Express listening on port ', console.port);
+server.listen(config.port, config.host, () => {
+  console.info('Express listening on port', config.port);
 });
